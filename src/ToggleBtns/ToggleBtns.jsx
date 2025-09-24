@@ -17,30 +17,6 @@ const ToggleBtns = ({ toggleStatus, setToggleStatus }) => {
               {btn}
             </button>
           ))}
-          {/* <button
-            className={`toggle-btns ${
-              toggleStatus == "Pending" && "!text-white !bg-purple-500"
-            }`}
-            onClick={() => setToggleStatus("Pending")}
-          >
-            Pending
-          </button>
-          <button
-            className={`toggle-btns ${
-              toggleStatus == "Submitted" && "!text-white !bg-purple-500"
-            }`}
-            onClick={() => setToggleStatus("Submitted")}
-          >
-            Submitted
-          </button>
-          <button
-            className={`toggle-btns rounded-r-xl ${
-              toggleStatus == "Reviewed" && "!text-white !bg-purple-500"
-            }`}
-            onClick={() => setToggleStatus("Reviewed")}
-          >
-            Reviewed
-          </button> */}
         </div>
       </Container>
     </>
