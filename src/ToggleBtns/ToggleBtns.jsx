@@ -1,20 +1,23 @@
 import React from "react";
 import Container from "../Container/Container";
 
-const ToggleBtns = ({toggleStatus,setToggleStatus}) => {
+const ToggleBtns = ({ toggleStatus, setToggleStatus }) => {
+  const btns = ["All", "Pending", "Submitted", "Reviewed"];
   return (
     <>
       <Container>
         <div className="text-right mb-[50px]">
-          <button
-            className={`toggle-btns rounded-l-xl ${
-              toggleStatus == "All" && "!text-white !bg-purple-500"
-            }`}
-            onClick={() => setToggleStatus("All")}
-          >
-            All
-          </button>
-          <button
+          {btns.map((btn, index) => (
+            <button key={index}
+              className={`${index == 0 && "rounded-l-md"} ${index == btns.length -1 && "rounded-r-md"} toggle-btns  ${
+                toggleStatus == btn && "!text-white !bg-purple-500"
+              }`}
+              onClick={() => setToggleStatus(btn)}
+            >
+              {btn}
+            </button>
+          ))}
+          {/* <button
             className={`toggle-btns ${
               toggleStatus == "Pending" && "!text-white !bg-purple-500"
             }`}
@@ -37,7 +40,7 @@ const ToggleBtns = ({toggleStatus,setToggleStatus}) => {
             onClick={() => setToggleStatus("Reviewed")}
           >
             Reviewed
-          </button>
+          </button> */}
         </div>
       </Container>
     </>
